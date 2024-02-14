@@ -17,16 +17,18 @@ public class Main {
     }
 
     private static void imprimirResultado(int dato, int[] vector,boolean posicionOvalor) {
+        boolean aux = true;
         if(posicionOvalor) {
             System.out.println("\nVector de primos hasta:" + dato);
-            for (int i = 0; i < vector.length; i++) {
-                if (i % 10 == 0) System.out.println();
-                System.out.print(vector[i] + "\t");
-            }
         }else{
             System.out.println("\nVector inicial hasta :"+ dato);
-            for (int i = 0; i < vector.length; i++) {
-                if (i%10==0) System.out.println();
+            aux = false;
+        }
+        for (int i = 0; i < vector.length; i++) {
+            if (i % 10 == 0) System.out.println();
+            if(aux){
+                System.out.print(vector[i] + "\t");
+            }else{
                 System.out.print(i+1+"\t");
             }
         }
