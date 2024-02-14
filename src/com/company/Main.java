@@ -40,7 +40,7 @@ public class Main {
     {
         if (max >= 2) {
             // Declaraciones
-            int dim = tamañoArray(max); // Tamaño del array
+            int dim = max+1; // Tamaño del array
             boolean[] esPrimo = getVectorBooleanoInicial(dim);
             cribaMultiplos2(dim, esPrimo);
             int cuenta = getCuantosPrimos(dim, esPrimo);
@@ -49,9 +49,6 @@ public class Main {
             // Vector vacío
             return new int[0];
         }
-    }
-    private static int tamañoArray(int max) {
-        return max + 1;
     }
     private static int[] primos(int cuenta, int dim, boolean[] esPrimo) {
         int j;
