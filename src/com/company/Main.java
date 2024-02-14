@@ -9,7 +9,12 @@ public class Main {
         vector=generarPrimos(dato);
         imprimirResultado(dato, vector,true);
     }
-    //Rellenar Vector de 1 hasta dato
+    /**
+     * Rellenar Vector de 1 hasta dato.
+     *
+     * @param dato dato introducido por el usuario.
+     * @return vector rellenado de 1 a dato.
+     */
     private static int[] rellenarVectorInicial(int dato) {
         int vector[]=new int[dato];
         imprimirResultado(dato,vector,false);
