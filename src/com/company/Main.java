@@ -1,6 +1,11 @@
 package com.company;
 import java.util.Scanner;
 public class Main {
+    /**
+     * Método Main.
+     *
+     * @param args dato principal del método main.
+     */
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
@@ -15,13 +20,19 @@ public class Main {
      * @param dato dato introducido por el usuario.
      * @return vector rellenado de 1 a dato.
      */
-    private static int[] rellenarVectorInicial(int dato) {
+    public static int[] rellenarVectorInicial(int dato) {
         int vector[]=new int[dato];
         imprimirResultado(dato,vector,false);
         return vector;
     }
-
-    private static void imprimirResultado(int dato, int[] vector,boolean posicionOvalor) {
+    /**
+     * Método imprimir resultado, depende del booleano posicionOvalor, recorrerá el vector por posiciones o valores.
+     * @param dato dato.
+     * @param vector vector de enteros.
+     * @param posicionOvalor booleano para saber si se trata de una posición o un valor.
+     * imprime el resultado del vector.
+     */
+    public static void imprimirResultado(int dato, int[] vector,boolean posicionOvalor) {
         boolean aux = true;
         if(posicionOvalor) {
             System.out.println("\nVector de primos hasta:" + dato);
@@ -40,7 +51,12 @@ public class Main {
     }
 
 
-    // Generar números primos de 1 a max
+    /**
+     * Generar primos de 1 a max.
+     *
+     * @param max dato introducido por el usuario.
+     * @return vector rellenado de 1 a dato.
+     */
     public static int[] generarPrimos (int max)
     {
         if (max >= 2) {
@@ -55,7 +71,15 @@ public class Main {
             return new int[0];
         }
     }
-    private static int[] primos(int cuenta, int dim, boolean[] esPrimo) {
+    /**
+     * Rellenar vector con números primos.
+     *
+     * @param cuenta introducido por el usuario.
+     * @param dim introducido por el usuario.
+     * @param esPrimo introducido por el usuario.
+     * @return primos rellenado vector de números primos.
+     */
+    public static int[] primos(int cuenta, int dim, boolean[] esPrimo) {
         int j;
         int i;
         // Rellenar el vector de números primos
@@ -66,8 +90,14 @@ public class Main {
         }
         return primos;
     }
-
-    private static int getCuantosPrimos(int dim, boolean[] esPrimo) {
+    /**
+     * Cuenta cuantos números primos hay en un vector.
+     *
+     * @param dim dimensión del vector.
+     * @param esPrimo vector con números primos y no primos.
+     * @return Entero con el número de primos que hay.
+     */
+    public static int getCuantosPrimos(int dim, boolean[] esPrimo) {
         int i;
         // ¿Cuántos primos hay?
         int cuenta = 0;
@@ -77,8 +107,13 @@ public class Main {
         }
         return cuenta;
     }
-
-    private static void cribaMultiplos2(int dim, boolean[] esPrimo) {
+    /**
+     * Metodo para poner todos los números multiplos de 2 en false, no devuelve nada pero hace cambios sobre el vector boolean[] esPrimo.
+     *
+     * @param dim dimensión del vector.
+     * @param esPrimo vector con números primos y no primos.
+     */
+    public static void cribaMultiplos2(int dim, boolean[] esPrimo) {
         int j;
         int i;
         // Criba
@@ -90,8 +125,14 @@ public class Main {
             }
         }
     }
-
-    private static boolean[] getVectorBooleanoInicial(int dim) {
+    /**
+     * Crear vector inicial.
+     *
+     *
+     * @param dim dimensión del vector.
+     * @return vector de booleanos inicializado con todos en true menos el primero y el segundo.
+     */
+    public static boolean[] getVectorBooleanoInicial(int dim) {
         int i;
         boolean[] esPrimo = new boolean[dim];
         // Inicializar el array
